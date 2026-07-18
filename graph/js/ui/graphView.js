@@ -113,6 +113,14 @@ export function createGraphView(container) {
     },
     finalize(result) {
       if (!result) return;
+      // Rebuild the layout from the result (the per-event 'input' setup is skipped
+      // in turbo, so nodes/edges/pos may still be empty here).
+      if (result.nodes) {
+        nodes = result.nodes; edges = result.edges; source = result.source; target = result.target;
+        pos = new Map(nodes.map((n) => [n.id, { x: n.x, y: n.y }]));
+        const xs = nodes.map((n) => n.x); const ys = nodes.map((n) => n.y);
+        layoutBox = { minX: Math.min(...xs), maxX: Math.max(...xs), minY: Math.min(...ys), maxY: Math.max(...ys) };
+      }
       seen = new Set(result.order); cur = null;
       path = new Set(result.path);
       pathEdges = new Set();

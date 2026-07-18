@@ -148,7 +148,7 @@ async function solveFloor(cdp, base, floor, levelId, solution, viewId) {
   await cdp.waitFor('!!document.querySelector("#lessonPanel .banner-pass")', `${floor} pass banner`, 20000);
   const progress = await cdp.eval(`JSON.parse(localStorage.getItem("${floor}.progress") ?? "[]")`);
   if (!progress.includes(levelId)) fail(`${floor} progress does not contain ${levelId}`);
-  await cdp.waitFor(`document.getElementById("${viewId}").children.length > 0`, `${floor} view rendered`);
+  await cdp.waitFor(`!!document.querySelector("#${viewId} svg")`, `${floor} view rendered a diagram`);
   ok(`${floor} floor: solved ${levelId} via UI (banner + progress + animated view)`);
 }
 

@@ -203,6 +203,10 @@ export class GraphExecutor {
       dist: distObj, order: order.slice(), expanded,
       path, pathCost, hops,
       source: this.source, target: this.target,
+      // carried so the view can rebuild the layout on the turbo path, where the
+      // per-event 'input' setup was skipped.
+      nodes: this.nodeIds.map((id) => ({ id, x: this.pos.get(id).x, y: this.pos.get(id).y })),
+      edges: this._edgeList(),
     };
     if (path.length) this._emit({ type: 'path', nodes: path.slice(), cost: pathCost });
     this._emit({ type: 'note', code: path.length ? 'notePath' : 'noteNoPath', args: [pathCost, hops] });
