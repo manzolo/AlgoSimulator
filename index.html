@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EDU-ALGO · Algorithms Playground</title>
+<meta name="description" content="An interactive data-structures and algorithms learning hub in two floors: build search trees, heaps and hash tables key by key, and run BFS, DFS, Dijkstra and A* across graphs. Hand-written deterministic engines animate every step. Zero dependencies, bilingual IT/EN.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2307130c'/%3E%3Ctext x='8' y='12' font-size='7' font-family='monospace' font-weight='bold' fill='%2357e389' text-anchor='middle'%3E%E2%97%87%E2%97%88%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <span class="brand-mark">◇◈</span>
+    <div class="brand-text">
+      <h1>EDU-ALGO <span class="brand-sub">PLAYGROUND</span></h1>
+      <span class="brand-tag" data-i18n="tagline"></span>
+    </div>
+  </div>
+  <nav class="top-nav">
+    <button id="btnIntro" class="btn" data-i18n="navIntro"></button>
+    <div class="lang-switch" role="group" aria-label="language">
+      <button data-lang="it">IT</button><button data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main class="hub">
+  <section class="hero">
+    <h2 class="hero-title" data-i18n="heroTitle"></h2>
+    <p class="hero-text" data-i18n="heroText"></p>
+  </section>
+  <div id="floors" class="floors"></div>
+  <p class="hub-foot" data-i18n="footnote"></p>
+</main>
+
+<div id="introOverlay" class="overlay" hidden>
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="introTitle"></h2>
+      <button class="btn btn-ghost modal-close" id="introClose" aria-label="close">✕</button>
+    </div>
+    <div id="introBody" class="help-body"></div>
+    <div class="intro-foot">
+      <button class="btn btn-primary" id="introStart"></button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/hub.js"></script>
+</body>
+</html>
