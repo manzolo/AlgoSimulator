@@ -19,8 +19,9 @@ It is a sibling in the EDU-* series, alongside
 [EDU-SQL](https://github.com/manzolo/SqlSimulator),
 [EDU-GIT](https://github.com/manzolo/GitSimulator),
 [EDU-CRYPTO](https://github.com/manzolo/CryptoSimulator),
-[EDU-NN](https://github.com/manzolo/NeuralSimulator) and
-[EDU-OS](https://github.com/manzolo/OsSimulator).
+[EDU-NN](https://github.com/manzolo/NeuralSimulator),
+[EDU-OS](https://github.com/manzolo/OsSimulator) and
+[EDU-ELN](https://github.com/manzolo/ElectronicsSimulator).
 
 ## The two floors
 
